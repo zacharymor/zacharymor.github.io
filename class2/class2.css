@@ -1,0 +1,64 @@
+body {
+    background-color: antiquewhite;
+}
+
+.row {
+    background-color: blue;
+    display: flex;
+    /* flex-wrap: wrap; */
+}
+
+.col {
+    background-color: rgb(43, 234, 148);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.box1 {
+    background-color: blueviolet;
+}
+
+.box2 {
+    background-color: darkgoldenrod;
+}
+
+.box3 {
+    background-color:darkcyan;
+}
+
+
+.box1 {
+    background-color: blueviolet;
+    width: 33.33%;
+}
+
+.box2 {
+    background-color: darkgoldenrod;
+    width: 33.33%;
+}
+
+.box3 {
+    background-color:darkcyan;
+    width: 33.33%;
+}
+
+.box4 {
+    background-color: rgb(137, 113, 159);
+    width: 100%;
+    height: 33.3%;
+}
+
+.box5 {
+    background-color: rgb(173, 17, 211);
+    width: 100%;
+    height: 33.3%;
+
+}
+
+.box6 {
+    background-color: rgba(54, 167, 43, 0.737);
+    width: 100%;
+    height: 33.3%;
+
+}
