@@ -117,6 +117,7 @@ body {
 
 .extra-links a:hover {
     color: #004080; /* Darker Windows XP link color on hover */
+    text-decoration: underline;
 }
 
 .submit-button {
