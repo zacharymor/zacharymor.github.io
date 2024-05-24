@@ -33,31 +33,29 @@ body {
     flex-direction: column;
     color: #000;
     align-items: center;
-    padding: 20px;
+    padding: 80px;
 }
 
 #sec-21 {
     display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
 #sec-211 {
-    width: 25vw;
-    overflow: hidden;
-    background-color: rgba(255, 255, 255, 0.898);
-    min-height: 250px;
-    height: 250px;
+    width: 25%;
+    min-width: 200px;
+    background-color: rgba(255, 255, 236, 0.898);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     text-align: center;
-    margin: 10px;
     border-top: 5px solid hsl(65, 41%, 55%);
     border-left: 5px solid hsl(65, 48%, 60%);
     border-right: 5px solid hsl(66, 82%, 85%);
     border-bottom: 5px solid hsl(65, 92%, 85%);
-    padding: 20px;
-    padding-left: 10px;
     color: #000;
+    margin-top: 10px;
 }
 
 h1 {
@@ -81,7 +79,12 @@ h3 {
 }
 
 h4 {
-
+    display: inline;
+    background-color: hsl(0, 0%, 100%);
+    border-top: 5px solid hsl(65, 41%, 55%);
+    border-left: 5px solid hsl(65, 48%, 60%);
+    border-right: 5px solid hsl(65, 92%, 85%);
+    border-bottom: 5px solid hsl(65, 92%, 85%);
 }
 
 nav {
@@ -149,9 +152,8 @@ footer {
 
 .card-img {
     width: 100%;
-    min-width: 300px;
     height: auto;
-    transform: translate(0%, -20%);
+    overflow: hidden;
 }
 
 p {
@@ -163,7 +165,6 @@ figure {
     margin: 0;
     padding: 0;
     height: 100px;
-    min-height: 100px;
-    min-width: 300px;
+    width: 100%;
     overflow: hidden;
 }

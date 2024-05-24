@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Ticket</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section>
+        <div class="ticket col">
+            <div class="login-header row">
+                <h2 id="sign-up-title" class="col active glitch">Sign-up</h2>
+                <h2 id="login-title" class="col">Login</h2>
+            </div>
+            <div class="perforation"></div>
+            <fieldset class="col login-form">
+                <form action="" method="">
+                    <section class="row name-input" id="name-input">
+                        <div class="input-group">
+                            <label for="firstname">
+                                <input type="text" id="firstname" name="firstname" placeholder="First Name *">
+                            </label>
+                        </div>
+                        <div class="input-group">
+                            <label for="lastname">
+                                <input type="text" id="lastname" name="lastname" placeholder="Last Name *">
+                            </label>
+                        </div>
+                    </section>
+                    <section class="col user-pass-input">
+                        <div class="input-group">
+                            <label for="username">
+                                <input type="text" id="username" name="username" required placeholder="Username *">
+                            </label>
+                        </div>
+                        <div class="input-group">
+                            <label for="password">
+                                <input type="password" id="password" name="password" required placeholder="Password *">
+                            </label>
+                        </div>
+                    </section>
+                    <section class="col form-buttons">
+                        <button class="submit-button" type="submit" id="submit-btn">Sign Up</button>
+                        <div class="extra-links" id="extra-links-signup">
+                            <a href="#" id="already-account">Already have an account? Sign In</a>
+                        </div>
+                        <div class="extra-links" id="extra-links-login" style="display: none;">
+                            <a href="#" id="forgot-pass">Forgot Password?</a>
+                            <a href="#" id="no-account">No account? Sign Up</a>
+                        </div>
+                    </section>
+                </form>
+            </fieldset>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
