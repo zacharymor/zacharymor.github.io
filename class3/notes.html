@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .background {
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            margin: 0;
+            position: relative;
+        }
+        body {
+            margin: 0;
+        }
+        .background>img {
+            display: flex;
+            position: absolute; 
+            width: 100%; 
+            height: 100vh; 
+            overflow: hidden;
+        }
+
+        .bee-img {
+            position: absolute;
+            animation: flybee 2s infinite reverse;
+        }
+
+        @keyframes flybee {
+            0% {transform: translate(0, 0) rotateY(0deg);}
+            25% {transform: translate(50px, -50px) rotateY(90deg);}
+            50% {transform: translate(100px, 0) rotateY(180deg);}
+            75% {transform: translate(50px, 50px) rotateY(270deg);}
+            100% {transform: translate(0, 0) rotateY(360deg);}
+        }
+
+        .all {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: aquamarine;
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="all">
+        <div class="background">
+            <button onclick="addBees(10)" style="z-index: 20; position: relative; top: 62%; left: 62%;">Add 10 Bees</button>
+            <button onclick="removeBees(10)" style="z-index: 20; position: relative; top: 62%; left: 38%;">Remove 10 Bees</button>            <img src="flowers.jpeg" style="z-index: -1;" alt="">
+            <img src="flowers2.png" style="filter: blur(5px); z-index: 3;" alt="">
+        </div>
+    </div>
+
+    <script>
+        const background = document.querySelector('.background');
+
+        function getRandomInt(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        function createBee() {
+            const bee = document.createElement('img');
+            bee.src = 'bee.png';
+            bee.classList.add('bee-img');
+
+            bee.style.position = 'absolute';
+            const size = getRandomInt(50, 150); // Random size between 50px and 150px
+            bee.style.width = `${size}px`;
+            bee.style.height = 'auto';
+
+            function setRandomPosition() {
+                const top = getRandomInt(0, window.innerHeight * 0.6 - size);
+                const left = getRandomInt(0, window.innerWidth - size);
+                bee.style.top = `${top}px`;
+                bee.style.left = `${left}px`;
+            }
+
+            setRandomPosition();
+
+            // Randomize animation duration for each bee
+            const animationDuration = getRandomInt(2, 15); // Random duration between 2s and 5s
+            bee.style.animationDuration = `${animationDuration}s`;
+
+
+            background.appendChild(bee);
+        }
+
+        const numberOfBees = getRandomInt(21, 34); // Random number of bees between 3 and 10
+        for (let i = 0; i < numberOfBees; i++) {
+            createBee();
+        }
+
+
+        function addBees(count) {
+            for (let i = 0; i < count; i++) {
+                createBee();
+            }
+        }
+
+        function removeBees(count) {
+            const bees = document.querySelectorAll('.bee-img');
+            const beesToRemove = Math.min(bees.length, count);
+            for (let i = 0; i < beesToRemove; i++) {
+                bees[i].remove();
+            }
+        }
+    </script>
+</body>
+</html>
