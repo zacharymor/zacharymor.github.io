@@ -45,14 +45,61 @@
             width: 100%;
         }
 
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 10;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            text-align: center;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
     <div id="all">
         <div class="background">
             <button onclick="addBees(10)" style="z-index: 20; position: relative; top: 62%; left: 62%;">Add 10 Bees</button>
-            <button onclick="removeBees(10)" style="z-index: 20; position: relative; top: 62%; left: 38%;">Remove 10 Bees</button>            <img src="flowers.jpeg" style="z-index: -1;" alt="">
+            <button onclick="removeBees(10)" style="z-index: 20; position: relative; top: 62%; left: 38%;">Remove 10 Bees</button>
+            <a href="#" onclick="openModal()" style="position: absolute; top: 5%; left: 5%; z-index: 20;">Do more</a>
+            <img src="flowers.jpeg" style="z-index: -1;" alt="">
             <img src="flowers2.png" style="filter: blur(5px); z-index: 3;" alt="">
+        </div>
+    </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p>Do you want to kill the bees?</p>
+            <button onclick="killBees()">Yes, kill the bees</button>
+            <button onclick="closeModal()">Go back</button>
         </div>
     </div>
 
@@ -83,9 +130,8 @@
             setRandomPosition();
 
             // Randomize animation duration for each bee
-            const animationDuration = getRandomInt(2, 15); // Random duration between 2s and 5s
+            const animationDuration = getRandomInt(2, 100)/10; // Random duration between 2s and 5s
             bee.style.animationDuration = `${animationDuration}s`;
-
 
             background.appendChild(bee);
         }
@@ -94,7 +140,6 @@
         for (let i = 0; i < numberOfBees; i++) {
             createBee();
         }
-
 
         function addBees(count) {
             for (let i = 0; i < count; i++) {
@@ -108,6 +153,28 @@
             for (let i = 0; i < beesToRemove; i++) {
                 bees[i].remove();
             }
+        }
+
+        function openModal() {
+            const modal = document.getElementById("myModal");
+            modal.style.display = "block";
+        }
+
+        function closeModal() {
+            const modal = document.getElementById("myModal");
+            modal.style.display = "none";
+        }
+
+        function killBees() {
+            const bees = document.querySelectorAll('.bee-img');
+            bees.forEach(bee => bee.remove());
+
+            const addBtn = document.querySelector('button[onclick="addBees(10)"]');
+            const removeBtn = document.querySelector('button[onclick="removeBees(10)"]');
+            addBtn.style.display = "none";
+            removeBtn.style.display = "none";
+
+            closeModal();
         }
     </script>
 </body>
