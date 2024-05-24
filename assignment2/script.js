@@ -31,7 +31,7 @@ const signUpTitle = document.getElementById('sign-up-title');
             extraLinksSignUp.style.display = 'none';
             extraLinksLogin.style.display = 'block';
         });
-
+        
 
         noAccount.addEventListener('click', () => {
             signUpTitle.classList.add('active', 'glitch'); // Added glitch class for glitch animation

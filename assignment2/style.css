@@ -108,6 +108,22 @@ body {
     font-size: 0.9em;
 
 }
+.color-last-letter::placeholder {
+    /* Define your placeholder color */
+    color: #999;
+
+    /* Position the pseudo-element */
+    position: relative;
+
+    /* Define the color of the last letter using ::after */
+}
+.color-last-letter::placeholder::after {
+    content: attr(placeholder);
+    position: absolute;
+    right: 0;
+    color: red; /* Change this to your desired color */
+    opacity: 0.5; /* Adjust the opacity as needed */
+}
 
 .extra-links a {
     text-decoration: none;
