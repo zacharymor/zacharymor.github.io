@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .col {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            align-content: center;
+            overflow: hidden;
+            text-wrap: wrap;
+        }
+        .row {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        h1 {
+            font-size: xx-large;
+        }
+
+        img {
+            overflow: hidden;
+        }
+
+        p {
+            margin-bottom: 50px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .col>button {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translate(-50%, 0);
+        }
+
+        .row>.col {
+            position: relative;
+            margin: 10px;
+            border-top: 5px solid hsl(65, 41%, 55%);
+            border-left: 5px solid hsl(65, 48%, 60%);
+            border-right: 5px solid hsl(66, 82%, 85%);
+            border-bottom: 5px solid hsl(65, 92%, 85%);
+            padding: 10px;
+        }
+    </style>
+    
+</head>
+<body>
+    <section>
+        <div class="container">
+            <div class="col">
+                <div>
+                    <h1>This is the title!</h1>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <img src="flowers.jpeg" alt="1">
+                        <p>asdfasdfa sdfasdfasd fasdfas dfa sdfasd</p>
+                        <button>more info</button>
+                    </div>
+                    <div class="col">
+                        <img src="flowers.jpeg" alt="2">
+                        <p>asdfasdfa sdfasdfasd fasdfas dfa sdfasd asdfasdfa sdfasdfasd fasdfas dfa sdfasd asdfasdfa sdfasdfasd fasdfas dfa sdfasd asdfasdfa sdfasdfasd fasdfas dfa sdfasd</p>
+                        <button>more info</button>
+                    </div>
+                    <div class="col">
+                        <img src="flowers.jpeg" alt="3">
+                        <p>asdfasdfa sdfasdfasd fasdfas dfa sdfasd asdfasdfa sdfasdfasd fasdfas dfa sdfasd asdfasdfa sdfasdfasd fasdfas dfa sdasdfasdfa sdfasdfasd fasdfas dfa sdfasdfasd</p>
+                        <button>more info</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <img src="flowers.jpeg" alt="4">
+                        <p>asdfasdfa sdfasdfasd fasdfas dfa sdfasd asdfasdfa sdfasdfasd fasdfas dfa sdfasd asdfasdfa sdfasdfasd fasdfas dfa sdasdfasdfa sdfasdfasd fasdfas dfa sdfasdasdfasdfa sdfasdfasd fasdfas dfa sdfasdfasd</p>
+                        <button>more info</button>
+                    </div>
+                    <div class="col">
+                        <img src="flowers.jpeg" alt="5">
+                        <p>asdfasdfa sdfasdfasd fasdfas dfa asdfasdfa sdfasdfasd fasdfas dfa sdfasdasdfasdfa sdfasdfasd fasdfas dfa sdfasdasdfasdfa sdfasdfasd fasdfas dfa sdfasdsdfasd</p>
+                        <button>more info</button>
+                    </div>
+                    <div class="col">
+                        <img src="flowers.jpeg" alt="6">
+                        <p>asdfasdfa sdfasdfasd fasdfas asdfasdfa sdfasdfasd fasdfas dfa sdfasdasdfasdfa sdfasdfasd fasdfas dfa sdfasdasdfasdfa sdfasdfasd fasdfas dfa sdfasdasdfasdfa sdfasdfasd fasdfas dfa sdfasddfa sdfasd</p>
+                        <button>more info</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

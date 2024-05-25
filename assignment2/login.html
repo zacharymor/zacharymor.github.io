@@ -4,44 +4,216 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Ticket</title>
-    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .bg-primary {
+            background-color: #000080 !important; /* Dark blue color */
+        }
+
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #008080; /* Windows XP background color */
+        }
+        
+        .ticket {
+            width: 100%;
+            max-width: 420px;
+            background-color: #c0c0c0; /* Windows XP window color */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            box-sizing: border-box;
+            border: 1px solid #808080; /* Windows XP border color */
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .ticket:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Header Styles */
+        .login-header {
+            width: 100%;
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: #000080; /* Windows XP header color */
+            color: white;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+        }
+
+        .login-header h2 {
+            width: 100%;
+            text-align: center;
+            margin: 0;
+            padding: 10px 0;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Input Styles */
+        .input-group {
+            width: 100%;
+            display: flex;
+        }
+
+        .input-group label {
+            width: 100%;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            margin: 5px 0;
+            border: 1px solid #808080; /* Windows XP input border color */
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 1em;
+            background-color: #ffffff; /* Windows XP input background color */
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .input-group input:focus {
+            border-color: #000080; /* Windows XP input focus color */
+            box-shadow: 0 0 5px rgba(0, 0, 128, 0.5);
+        }
+
+        /* Form Buttons Styles */
+        .submit-button {
+            width: 100%;
+            padding: 12px;
+            background-color: #008000; /* Windows XP button color */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            font-size: 1em;
+            margin-top: 10px;
+        }
+
+        .submit-button:hover {
+            background-color: #006400; /* Darker Windows XP button color on hover */
+            box-shadow: 0 4px 10px rgba(0, 64, 0, 0.5);
+        }
+
+        /* Extra Links Styles */
+        .extra-links {
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            width: 100%;
+            padding: 10px 0;
+            font-size: 0.9em;
+        }
+
+        .extra-links a {
+            text-decoration: none;
+            color: #000080; /* Windows XP link color */
+            transition: color 0.3s ease;
+        }
+
+        .extra-links a:hover {
+            color: #004080; /* Darker Windows XP link color on hover */
+        }
+
+        /* Glitch Animation */
+        @keyframes glitch {
+            0% {
+                transform: translate(0);
+            }
+            25% {
+                transform: translate(-2px, 2px);
+            }
+            50% {
+                transform: translate(2px, -2px);
+            }
+            75% {
+                transform: translate(2px, 2px);
+            }
+            100% {
+                transform: translate(-2px, -2px);
+            }
+        }
+
+        .glitch {
+            animation: glitch 0.1s infinite;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .name-input .input-group {
+                width: 100%;
+            }
+
+            .name-input {
+                flex-direction: column;
+                padding: 0px;
+                gap: 0px;
+            }
+
+            .login-header {
+                flex-direction: column;
+            }
+
+            .login-header h2 {
+                width: 100%;
+            }
+        }
+
+        /* Active Tab Style */
+        .active {
+            background-color: #004080 !important; /* Windows XP active tab color */
+        }
+    </style>
 </head>
 <body>
     <section>
-        <div class="ticket col">
-            <div class="login-header row">
+        <div class="ticket col-12 col-md-8 col-lg-6">
+            <div class="login-header row bg-primary text-white">
                 <h2 id="sign-up-title" class="col active glitch">Sign-up</h2>
                 <h2 id="login-title" class="col">Login</h2>
             </div>
             <div class="perforation"></div>
-            <fieldset class="col login-form">
+            <fieldset class="col login-form p-4">
                 <form action="" method="">
                     <section class="row name-input" id="name-input">
-                        <div class="input-group">
+                        <div class="input-group col">
                             <label for="firstname">
-                                <input type="text" id="firstname" name="firstname" placeholder="First Name *">
+                                <input type="text" id="firstname" name="firstname" class="form-control" placeholder="First Name *" required>
                             </label>
                         </div>
-                        <div class="input-group">
+                        <div class="input-group col">
                             <label for="lastname">
-                                <input type="text" class="color-last-letter" id="lastname" name="lastname" placeholder="Last Name *">
+                                <input type="text" id="lastname" name="lastname" class="form-control" placeholder="Last Name *" required>
                             </label>
                         </div>
                     </section>
                     <section class="col user-pass-input">
-                        <div class="input-group">
+                        <div class="input-group col">
                             <label for="username">
-                                <input type="text" id="username" name="username" required placeholder="Username *">
+                                <input type="text" id="username" name="username" class="form-control" placeholder="Username *" required>
                             </label>
                         </div>
-                        <div class="input-group">
+                        <div class="input-group col">
                             <label for="password">
-                                <input type="password" id="password" name="password" required placeholder="Password *">
+                                <input type="password" id="password" name="password" class="form-control" placeholder="Password *" required>
                             </label>
                         </div>
                     </section>
                     <section class="col form-buttons">
-                        <button class="submit-button" type="submit" id="submit-btn">Sign Up</button>
+                        <button class="submit-button btn btn-success" type="submit" id="submit-btn">Sign Up</button>
                         <div class="extra-links" id="extra-links-signup">
                             <a href="#" id="already-account">Already have an account? Sign In</a>
                         </div>
@@ -55,6 +227,63 @@
         </div>
     </section>
 
-    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const signUpTitle = document.getElementById('sign-up-title');
+        const loginTitle = document.getElementById('login-title');
+        const submitButton = document.getElementById('submit-btn');
+        const firstNameInput = document.getElementById('firstname');
+        const lastNameInput = document.getElementById('lastname');
+        const nameInputSection = document.getElementById('name-input');
+        const extraLinksSignUp = document.getElementById('extra-links-signup');
+        const extraLinksLogin = document.getElementById('extra-links-login');
+        const alreadyAccount = document.getElementById('already-account');
+        const forgotPass = document.getElementById('forgot-pass');
+        const noAccount = document.getElementById('no-account');
+
+        signUpTitle.addEventListener('click', () => {
+            signUpTitle.classList.add('active', 'glitch');
+            loginTitle.classList.remove('active', 'glitch');
+            submitButton.textContent = 'Sign Up';
+            firstNameInput.setAttribute('required', true);
+            lastNameInput.setAttribute('required', true);
+            nameInputSection.style.display = 'flex';
+            extraLinksSignUp.style.display = 'block';
+            extraLinksLogin.style.display = 'none';
+        });
+
+        loginTitle.addEventListener('click', () => {
+            signUpTitle.classList.remove('active', 'glitch');
+            loginTitle.classList.add('active', 'glitch');
+            submitButton.textContent = 'Login';
+            firstNameInput.removeAttribute('required');
+            lastNameInput.removeAttribute('required');
+            nameInputSection.style.display = 'none';
+            extraLinksSignUp.style.display = 'none';
+            extraLinksLogin.style.display = 'block';
+        });
+
+        noAccount.addEventListener('click', () => {
+            signUpTitle.classList.add('active', 'glitch');
+            loginTitle.classList.remove('active', 'glitch');
+            submitButton.textContent = 'Sign Up';
+            firstNameInput.setAttribute('required', true);
+            lastNameInput.setAttribute('required', true);
+            nameInputSection.style.display = 'flex';
+            extraLinksSignUp.style.display = 'block';
+            extraLinksLogin.style.display = 'none';
+        });
+
+        alreadyAccount.addEventListener('click', () => {
+            signUpTitle.classList.remove('active', 'glitch');
+            loginTitle.classList.add('active', 'glitch');
+            submitButton.textContent = 'Login';
+            firstNameInput.removeAttribute('required');
+            lastNameInput.removeAttribute('required');
+            nameInputSection.style.display = 'none';
+            extraLinksSignUp.style.display = 'none';
+            extraLinksLogin.style.display = 'block';
+        });
+    </script>
 </body>
 </html>

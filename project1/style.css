@@ -1,0 +1,299 @@
+body {
+    font-family: 'Tahoma', Geneva, sans-serif;
+    background-color: #C0C0C0;
+    margin: 0;
+}
+.bg-primary {
+    background-color: #000080 !important;
+    color: white;
+}
+.navbar-light .navbar-brand, .navbar-light .navbar-nav .nav-link {
+    color: white;
+    font-weight: bold;
+}
+.jumbotron {
+    background-color: #C0C0C0;
+    border: 2px solid #808080;
+    border-top: 2px solid #FFFFFF;
+    border-left: 2px solid #FFFFFF;
+    box-shadow: inset -1px -1px 0 0 #FFFFFF, inset 1px 1px 0 0 #808080;
+}
+.card {
+    border: 2px solid #808080;
+    border-top: 2px solid #FFFFFF;
+    border-left: 2px solid #FFFFFF;
+    box-shadow: inset -1px -1px 0 0 #FFFFFF, inset 1px 1px 0 0 #808080;
+    background-color: #C0C0C0;
+}
+.modal-content {
+    border: 2px solid #808080;
+    border-top: 2px solid #FFFFFF;
+    border-left: 2px solid #FFFFFF;
+    box-shadow: inset -1px -1px 0 0 #FFFFFF, inset 1px 1px 0 0 #808080;
+}
+footer {
+    background-color: #404040;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    box-shadow: 0 -1px 0 0 #FFFFFF inset;
+}
+.container {
+    background-color: #C0C0C0;
+    border: 2px solid #808080;
+    border-top: 2px solid #FFFFFF;
+    border-left: 2px solid #FFFFFF;
+    box-shadow: inset -1px -1px 0 0 #FFFFFF, inset 1px 1px 0 0 #808080;
+    padding: 20px;
+    border-radius: 0;
+}
+.btn-primary {
+    background-color: #C0C0C0;
+    border: 2px solid #808080;
+    border-top: 2px solid #FFFFFF;
+    border-left: 2px solid #FFFFFF;
+    color: black;
+}
+.btn-primary:hover {
+    background-color: #B0B0B0;
+}
+.taskbar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    background-color: #404040;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    box-shadow: 0 -1px 0 0 #FFFFFF inset;
+}
+.taskbar-item {
+    margin-right: 20px;
+}
+@keyframes rotateClockwise {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(10deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes rotateCounterclockwise {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(-5deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.header-animation {
+    rotate: -5deg;
+    animation: rotateClockwise 1.2s ease-in-out forwards infinite;
+}
+
+@keyframes glitchFont {
+    0% {
+        font-family: 'Montserrat', sans-serif;
+    }
+    20% {
+        font-family: 'Courier New', Courier, monospace;
+    }
+    40% {
+        font-family: 'Roboto', sans-serif;
+    }
+    60% {
+        font-family: 'Lucida Console', Monaco, monospace;
+    }
+    80% {
+        font-family: 'Arial', sans-serif;
+    }
+    100% {
+        font-family: 'Times New Roman', Times, serif;
+    }
+}
+
+.hero-title {
+    animation: glitchFont 2s infinite;
+}
+
+.bg-primary {
+    background-color: #000080 !important; /* Dark blue color */
+}
+
+
+.ticket {
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    border: 1px solid #808080; /* Windows XP border color */
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 0;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid #808080;
+    border-top: 2px solid #FFFFFF;
+    border-left: 2px solid #FFFFFF;
+    box-shadow: inset -1px -1px 0 0 #FFFFFF, inset 1px 1px 0 0 #808080;
+    background-color: #C0C0C0;
+}
+
+.login-modal {
+    display: none;
+}
+
+/* Header Styles */
+.login-header {
+    width: 100%;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #000080; /* Windows XP header color */
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+}
+
+.login-header h2 {
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    padding: 10px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Input Styles */
+.input-group {
+    width: 100%;
+    display: flex;
+}
+
+.input-group label {
+    width: 100%;
+}
+
+.input-group input {
+    width: 100%;
+    margin: 5px 0;
+    border: 1px solid #808080; /* Windows XP input border color */
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1em;
+    background-color: #ffffff; /* Windows XP input background color */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.input-group input:focus {
+    border-color: #000080; /* Windows XP input focus color */
+    box-shadow: 0 0 5px rgba(0, 0, 128, 0.5);
+}
+
+/* Form Buttons Styles */
+.submit-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #008000; /* Windows XP button color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    font-size: 1em;
+    margin-top: 10px;
+}
+
+.submit-button:hover {
+    background-color: #006400; /* Darker Windows XP button color on hover */
+    box-shadow: 0 4px 10px rgba(0, 64, 0, 0.5);
+}
+
+/* Extra Links Styles */
+.extra-links {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+    padding: 10px 0;
+    font-size: 0.9em;
+}
+
+.extra-links a {
+    text-decoration: none;
+    color: #000080; /* Windows XP link color */
+    transition: color 0.3s ease;
+}
+
+.extra-links a:hover {
+    color: #004080; /* Darker Windows XP link color on hover */
+    text-decoration: underline;
+}
+
+/* Glitch Animation */
+@keyframes glitch {
+    0% {
+        transform: translate(0);
+    }
+    25% {
+        transform: translate(-2px, 2px);
+    }
+    50% {
+        transform: translate(2px, -2px);
+    }
+    75% {
+        transform: translate(2px, 2px);
+    }
+    100% {
+        transform: translate(-2px, -2px);
+    }
+}
+
+section .col .user-pass-input {
+    margin: 0;
+}
+
+.glitch {
+    animation: glitch 0.1s infinite;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .name-input .input-group {
+        width: 100%;
+    }
+
+    .name-input {
+        flex-direction: column;
+        padding: 0px;
+        gap: 0px;
+    }
+
+    .login-header {
+        flex-direction: column;
+    }
+
+    .login-header h2 {
+        width: 100%;
+    }
+}
+
+/* Active Tab Style */
+.active {
+    background-color: #004080 !important; /* Windows XP active tab color */
+}

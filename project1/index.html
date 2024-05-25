@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Example with Modals</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-primary text-center py-3">
+        <h1 class="header-animation">Welcome to Our Website</h1>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Pricing</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container my-4">
+        <!-- Hero Section -->
+        <div class="jumbotron text-center">
+            <h1 class="display-4 hero-title">Welcome to Bootstrap</h1>
+            <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+            <hr class="my-4">
+            <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+            <a class="btn btn-primary btn-lg learn-more-btn" href="#" role="button">Learn more</a>
+            <a class="btn btn-primary btn-lg" href="#" role="button" onclick="showModal()">Login</a>
+
+        </div>
+
+        <!-- Content Section -->
+        <div class="row" id="card-container">
+            <!-- Cards will be generated here by JavaScript -->
+        </div>
+    </main>
+
+    <!-- Aside Section -->
+    <aside class="container my-4">
+        <h2>Related Links</h2>
+        <ul class="list-unstyled">
+            <li><a href="#" class="text-decoration-none">Link 1</a></li>
+            <li><a href="#" class="text-decoration-none">Link 2</a></li>
+            <li><a href="#" class="text-decoration-none">Link 3</a></li>
+        </ul>
+    </aside>
+
+    <!-- Footer -->
+    <footer class="text-center py-3">
+        <p>&copy; 2024 Your Company. All rights reserved.</p>
+    </footer>
+
+    <!-- Taskbar -->
+    <div class="taskbar">
+        <div class="taskbar-item">Start</div>
+        <div class="taskbar-item">Task 1</div>
+        <div class="taskbar-item">Task 2</div>
+    </div>
+
+    <!-- Login Modal -->
+    
+    <div class="login-modal">
+        <div style="height: 100vh; width: 100vw; background-color: #0000007c; position: fixed; top: 0;" onclick="hideModal()"></div>
+        <div class="ticket col-12 col-md-8 col-lg-6">
+            <button type="button" class="close" aria-label="Close" onclick="hideModal()">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="login-header row bg-primary text-white">
+                <h2 id="sign-up-title" class="col active glitch">Sign-up</h2>
+                <h2 id="login-title" class="col">Login</h2>
+            </div>
+            <div class="perforation"></div>
+            <fieldset class="col login-form p-4">
+                <form action="" method="">
+                    <section class="row name-input" id="name-input">
+                        <div class="input-group col">
+                            <label for="firstname">
+                                <input type="text" id="firstname" name="firstname" class="form-control" placeholder="First Name *" required>
+                            </label>
+                        </div>
+                        <div class="input-group col">
+                            <label for="lastname">
+                                <input type="text" id="lastname" name="lastname" class="form-control" placeholder="Last Name *" required>
+                            </label>
+                        </div>
+                    </section>
+                    <section class="user-pass-input">
+                        <div class="input-group">
+                            <label for="username">
+                                <input type="text" id="username" name="username" class="form-control" placeholder="Username *" required>
+                            </label>
+                        </div>
+                        <div class="input-group">
+                            <label for="password">
+                                <input type="password" id="password" name="password" class="form-control" placeholder="Password *" required>
+                            </label>
+                        </div>
+                    </section>
+                    <section class="col form-buttons">
+                        <button class="submit-button btn btn-success" type="submit" id="submit-btn">Sign Up</button>
+                        <div class="extra-links" id="extra-links-signup">
+                            <a href="#" id="already-account">Already have an account? Sign In</a>
+                        </div>
+                        <div class="extra-links" id="extra-links-login" style="display: none;">
+                            <a href="#" id="forgot-pass">Forgot Password?</a>
+                            <a href="#" id="no-account">No account? Sign Up</a>
+                        </div>
+                    </section>
+                </form>
+            </fieldset>
+        </div>
+    </div>
+    
+
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Modal Header</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p>This is some modal content. You can add whatever content you want here.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
