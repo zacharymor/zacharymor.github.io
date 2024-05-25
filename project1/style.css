@@ -4,6 +4,9 @@ body {
     margin: 0;
 }
 
+.navbar-toggler-icon {
+    background-color: #C0C0C0; /* Change the background color */
+  }
 
 .bg-primary {
     background-color: #000080 !important;
