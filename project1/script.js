@@ -151,14 +151,35 @@ window.onload = function() {
     createMultiPageModal();
 };
 
-function hideModal() {
-    $('.login-modal').hide();
-    $('body').css('overflow', 'auto');
+function showModal() {
+    // Get the current scroll position
+    var scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+    
+    // Show modal
+    $('.login-modal').show();
+    
+    // Prevent scrolling by fixing body position and maintaining scroll position
+    $('body').css({
+        'position': 'fixed',
+        'top': -scrollPosition + 'px',
+        'width': '100%'
+    });
 }
 
-function showModal() {
-    $('.login-modal').show();
-    $('body').css('overflow', 'hidden');
+function hideModal() {
+    // Hide modal
+    $('.login-modal').hide();
+    
+    // Restore scrolling by resetting body position
+    $('body').css({
+        'position': '',
+        'top': '',
+        'width': ''
+    });
+    
+    // Restore scroll position
+    var scrollPosition = parseInt($('body').css('top'));
+    $('body').scrollTop(-scrollPosition);
 }
 
 const signUpTitle = document.getElementById('sign-up-title');
