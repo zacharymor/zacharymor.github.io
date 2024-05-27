@@ -5,7 +5,7 @@ const cardData = [
         "title": "Breadboard", 
         "text": "Prototype your electronics projects with ease using this high-quality breadboard. Designed for quick and easy circuit assembly, it features a sturdy construction and ample connection points.", 
         "long_text": "Prototype your electronics projects with ease using this high-quality breadboard. Designed for quick and easy circuit assembly, it features a sturdy construction and ample connection points. Its spacious layout allows for extensive circuit designs, making it an essential tool for both beginners and advanced users. Perfect for educational purposes, hobbyists, and professional engineers alike. The robust design ensures that it can withstand frequent use, providing reliable connections every time.",
-        "image_url": "images/breadbox.jpeg",
+        "image_url": "./images/breadbox.jpeg",
         "price": "$9.99"
     },
     { 
@@ -13,7 +13,7 @@ const cardData = [
         "title": "Raspberry Pi", 
         "text": "Discover the power of the Raspberry Pi, a versatile mini-computer perfect for a variety of projects. Whether you're into programming, electronics, or DIY, this compact device has you covered.", 
         "long_text": "Discover the power of the Raspberry Pi, a versatile mini-computer perfect for a variety of projects. Whether you're into programming, electronics, or DIY, this compact device has you covered. With its powerful processing capabilities, extensive community support, and a wide range of compatible accessories, the Raspberry Pi is ideal for creating anything from a home media center to a sophisticated IoT device. Small in size but big on potential, it's a must-have for any tech enthusiast.",
-        "image_url": "images/raspberry-pi.jpg",
+        "image_url": "./images/raspberry-pi.jpg",
         "price": "$65.00"
     },
     { 
@@ -21,7 +21,7 @@ const cardData = [
         "title": "Jumpers", 
         "text": "Connect your components with ease using these high-quality jumper wires. Ideal for breadboarding and prototyping, they come in various lengths and colors for all your electronic needs.", 
         "long_text": "Connect your components with ease using these high-quality jumper wires. Ideal for breadboarding and prototyping, they come in various lengths and colors for all your electronic needs. These jumper wires are designed for durability and flexibility, ensuring secure connections and easy manipulation. Whether you're working on simple circuits or complex systems, these wires are essential for efficient and effective electronic assembly.",
-        "image_url": "images/wires.jpeg",
+        "image_url": "./images/wires.jpeg",
         "price": "$5.99"
     },
     { 
@@ -29,7 +29,7 @@ const cardData = [
         "title": "Servo", 
         "text": "Achieve precise control in your robotics and automation projects with this reliable servo motor. Known for its accuracy and durability, it is perfect for a range of applications.", 
         "long_text": "Achieve precise control in your robotics and automation projects with this reliable servo motor. Known for its accuracy and durability, it is perfect for a range of applications. From robotic arms to RC vehicles, this servo motor offers smooth and responsive movements. Its robust construction ensures long-lasting performance, making it a dependable choice for both hobbyists and professionals looking to add precise control to their projects.",
-        "image_url": "images/servo.jpeg",
+        "image_url": "./images/servo.jpeg",
         "price": "$32.49"
     },
     { 
@@ -45,7 +45,7 @@ const cardData = [
         "title": "LED", 
         "text": "Illuminate your projects with these versatile LEDs. Whether you're creating eye-catching displays, adding indicators to your circuits, or enhancing your DIY projects, these LEDs offer vibrant illumination and energy efficiency.", 
         "long_text": "Illuminate your projects with these versatile LEDs. Whether you're creating eye-catching displays, adding indicators to your circuits, or enhancing your DIY projects, these LEDs offer vibrant illumination and energy efficiency. With a wide range of colors and sizes available, you can easily find the perfect LED for your needs. Their compact size and low power consumption make them ideal for battery-powered applications and embedded systems. Bring your creations to life with the brilliant glow of these high-quality LEDs.",
-        "image_url": "images/led.jpg",
+        "image_url": "./images/led.jpg",
         "price": "$3.49"
     },
 ];
