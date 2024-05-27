@@ -3,39 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bootstrap Example with Modals</title>
+    <title>botbot.io - Motors, Controllers, Wires, Lights and more for Robotics - Online Shop</title>
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
 
+    @media (max-width: 768px) {
+        .btn-md-only {
+            width: 100%;
+        }
+    }
+    </style>
 </head>
 <body>
     <!-- Header -->
-    <header class="bg-primary text-center py-3">
-        <h1 class="header-animation">Welcome to Our Website</h1>
+    <header class="bg-primary text-center pt-3 pb-1">
+        <h1 class="header-animation">botbot.io</h1>
     </header>
 
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-primary">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
-                </li>
-            </ul>
+        <a class="navbar-brand" href="#"><img src="logo.png" style="filter: invert(); width: 50px;" alt=""></a>
+        <div class="d-flex flex-row-reverse flex-grow-1 justify-content">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <button onclick="showModal()" class="d-lg-none" style="height: 40px;" id="login-button">
+                Login 
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="navbar-nav d-flex flex-column flex-grow-1">
+                    <ul class="navbar-nav d-flex justify-content-between">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        </li>
+    
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Sensors</a>
+                        </li>
+    
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Power Supplies</a>
+                        </li>
+    
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Wheels & Tracks</a>
+                        </li>
+    
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Cables & Connectors</a>
+                        </li>
+    
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Kits & Bundles</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav d-flex justify-content-between">
+    
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Motors & Actuators</a>
+                        </li>
+    
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Controllers & Processors</a>
+                        </li>
+    
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Mechanical Components</a>
+                        </li>
+    
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Chassis & Frames</a>
+                        </li>
+    
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Tools & Accessories</a>
+                        </li>
+                        <li class="nav-item">
+                            <button onclick="showModal()" class="d-lg-none" style="height: 40px;" id="login-button">
+                                Login 
+                            </button>
+                            <a class="nav-link navbar-item d-none d-lg-block" href="#" onclick="showModal()">Login</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
         </div>
     </nav>
 
@@ -43,14 +98,13 @@
     <main class="container my-4">
         <!-- Hero Section -->
         <div class="jumbotron text-center">
-            <h1 class="display-4 hero-title">Welcome to Bootstrap</h1>
-            <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+            <h1 class="display-4 hero-title">Welcome</h1>
+            <p class="lead">Your one-stop shop for high-quality robot parts and accessories.</p>
             <hr class="my-4">
-            <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-            <a class="btn btn-primary btn-lg learn-more-btn" href="#" role="button">Learn more</a>
-            <a class="btn btn-primary btn-lg" href="#" role="button" onclick="showModal()">Login</a>
-
+            <p>Explore our extensive range of components to build, upgrade, and maintain your robots.</p>
+            <a class="btn btn-primary btn-lg" href="#card-container" role="button">Shop Now</a>
         </div>
+
 
         <!-- Content Section -->
         <div class="row" id="card-container">
@@ -62,28 +116,29 @@
     <aside class="container my-4">
         <h2>Related Links</h2>
         <ul class="list-unstyled">
-            <li><a href="#" class="text-decoration-none">Link 1</a></li>
-            <li><a href="#" class="text-decoration-none">Link 2</a></li>
-            <li><a href="#" class="text-decoration-none">Link 3</a></li>
+            <li><a href="https://www.raspberrypi.org" class="text-decoration-none">Raspberry Pi</a></li>
+            <li><a href="https://projects.raspberrypi.org/en/pathways/raspberry-pi-beginners" class="text-decoration-none">Beginner Project</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Robotics" class="text-decoration-none">About Robotics</a></li>
         </ul>
     </aside>
 
     <!-- Footer -->
-    <footer class="text-center py-3">
-        <p>&copy; 2024 Your Company. All rights reserved.</p>
+    <footer class="text-center py-3 mb-3">
+        <p>&copy; 2024 botbotio All rights reserved.</p>
     </footer>
 
     <!-- Taskbar -->
     <div class="taskbar">
         <div class="taskbar-item">Start</div>
-        <div class="taskbar-item">Task 1</div>
-        <div class="taskbar-item">Task 2</div>
+        <div class="taskbar-item">Laser Cutters</div>
+        <div class="taskbar-item">CNCs</div>
+        <div class="taskbar-item">3D Printers</div>
     </div>
 
     <!-- Login Modal -->
     
     <div class="login-modal">
-        <div style="height: 100vh; width: 100vw; background-color: #0000007c; position: fixed; top: 0;" onclick="hideModal()"></div>
+        <div style="height: 100vh; width: 100vw; background: repeating-linear-gradient(45deg, transparent, transparent 10px, #00000037 10px, #00000037 11px); position: fixed; top: 0;" onclick="hideModal()"></div>
         <div class="ticket col-12 col-md-8 col-lg-6">
             <button type="button" class="close" aria-label="Close" onclick="hideModal()">
                 <span aria-hidden="true">&times;</span>
