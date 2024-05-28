@@ -11,7 +11,7 @@
     <title>Online Game Hub</title>
     <style>
         body {
-            padding-top: 56px;
+            padding-top: 56px; 
             background-color: #f8f9fa;
         }
         .hero {
@@ -60,8 +60,39 @@
             height: 100%;
         }
         .selected {
-    border: 2px solid #007bff; /* Change the color to your preferred highlight color */
-}
+            border: 2px solid #007bff; /* Change the color to your preferred highlight color */
+        }
+        .triangle-up {
+            width: 0;
+            height: 0;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+            border-bottom: 100px solid yellow;
+        }
+
+        .triangle-down {
+            width: 0;
+            height: 0;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+            border-top: 100px solid orange;
+        }
+
+        .triangle-left {
+            width: 0;
+            height: 0;
+            border-top: 50px solid transparent;
+            border-bottom: 50px solid transparent;
+            border-right: 100px solid pink;
+        }
+
+        .triangle-right {
+            width: 0;
+            height: 0;
+            border-top: 50px solid transparent;
+            border-bottom: 50px solid transparent;
+            border-left: 100px solid brown;
+        }
 
     </style>
 </head>
@@ -114,68 +145,162 @@
     </div>
 
     <!-- Responsive Grid Section -->
-    <div class="container">
-            <div class="center-square justify-content-start mt-3">
-                <div class="row" id="game-container"></div>
-            </div>
+    <div class="container mt-5">
+        <div class="row" id="game-container"></div>
+        <div id="selected-words" class="mt-3"></div>
+        <button class="btn-primary btn mt-3" onclick="showSelected(); showCorrect()">Show Selected Words</button>
+        <button class="btn-dark btn mt-3" onclick="clearWords()">Clear Selected Words</button>
     </div>
 
     <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const games = [
-            { title: 'Word 1', description: 'Description of game 1.' },
-            { title: 'Word 2', description: 'Description of game 2.' },
-            { title: 'Word 3', description: 'Description of game 3.' },
-            { title: 'Word 4', description: 'Description of game 4.' },
-            { title: 'Word 5', description: 'Description of game 5.' },
-            { title: 'Word 6', description: 'Description of game 6.' },
-            { title: 'Word 7', description: 'Description of game 7.' },
-            { title: 'Word 8', description: 'Description of game 8.' },
-            { title: 'Word 9', description: 'Description of game 9.' },
-            { title: 'Word 10', description: 'Description of game 10.' },
-            { title: 'Word 11', description: 'Description of game 11.' },
-            { title: 'Word 12', description: 'Description of game 12.' },
-            { title: 'Word 13', description: 'Description of game 13.' },
-            { title: 'Word 14', description: 'Description of game 14.' },
-            { title: 'Word 15', description: 'Description of game 15.' },
-            { title: 'Word 16', description: 'Description of game 16.' }
-        ];
+    const games = [
+        { title: 'Time', description: 'Description of game 1.', difficulty: 'extreme' , clue: 'baker\'s tools'},
+        { title: 'Scale', description: 'Description of game 2.', difficulty: 'extreme' , clue: 'baker\'s tools'},
+        { title: 'Water', description: 'Description of game 3.', difficulty: 'extreme' , clue: 'baker\'s tools'},
+        { title: 'Pencil', description: 'Description of game 4.' , difficulty: 'easy', clue: 'class room objects'},
+        { title: 'Apple', description: 'Description of game 5.' , difficulty: 'easy', clue: 'class room objects'},
+        { title: 'Chair', description: 'Description of game 6.' , difficulty: 'easy', clue: 'class room objects'},
+        { title: 'Board', description: 'Description of game 7.' , difficulty: 'easy', clue: 'class room objects'},
+        { title: 'Angel', description: 'Description of game 8.' , difficulty: 'medium', clue: 'names'},
+        { title: 'Sierra', description: 'Description of game 9.' , difficulty: 'medium', clue: 'names'},
+        { title: 'Bill', description: 'Description of game 10.' , difficulty: 'medium', clue: 'names'},
+        { title: 'Fjord', description: 'Description of game 11.' , difficulty: 'difficult', clue: 'geological features'},
+        { title: 'Chuck', description: 'Description of game 12.' , difficulty: 'medium', clue: 'names'},
+        { title: 'Channel', description: 'Description of game 13.' , difficulty: 'difficult', clue: 'geological features'},
+        { title: 'Brook', description: 'Description of game 14.' , difficulty: 'difficult', clue: 'geological features'},
+        { title: 'Cliff', description: 'Description of game 15.' , difficulty: 'difficult', clue: 'geological features'},
+        { title: 'Cup', description: 'Description of game 16.', difficulty: 'extreme' , clue: 'baker\'s tools'}
+    ];
 
+    function finishedGame() {
+        let solved = []
+    
+    }
+    // Array to store selected words
+    let selectedWords = [];
+
+    function showSelected() {
+        alert(selectedWords);
+        
+    }
+
+    function revealCompleted() {
+        let rowHtml = `
+        <div class="row">
+            <div class="col-12 align-text-left">
+                <div class="d-flex flex-column card h-25 w-100">
+                    <p>`;
+        
+        selectedWords.forEach(word => {
+            rowHtml += " " + word;
+        });
+        rowHtml += '</p></div></div></div>';
+        const container = document.getElementById('game-container');
+        container.innerHTML += rowHtml;
+        return;
+    }
+
+    function deleteWords() {
+        // Remove the selected words from the games array
+        selectedWords.forEach(word => {
+            const index = games.findIndex(game => game.title === word);
+            if (index !== -1) {
+                games.splice(index, 1);
+            }
+        });
+
+        // Clear the container
+        const container = document.getElementById('game-container');
+        container.innerHTML = '';
+
+
+        const rows = Math.ceil(games.length / 4);
+        for (let i = 0; i < rows; i++) {
+            const gamesForRow = games.slice(i * 4, i * 4 + 4);
+            container.innerHTML += createGameRows(gamesForRow);
+        }
+
+
+    }
+
+    function selectWord(word) {
+        const index = selectedWords.indexOf(word);
+        const cardElement = document.getElementById(`card-${word}`);
+
+        if (index !== -1) {
+            selectedWords.splice(index, 1);
+            cardElement.classList.remove('selected');
+        } else {
+            selectedWords.push(word);
+            cardElement.classList.add('selected');
+        }
+    }
+
+
+    function showCorrect() {
+        if (selectedWords.length === 4) {
+            let clues = selectedWords.map(word => {
+                return games.find(game => game.title === word).clue;
+            });
+            
+            // Check if all clues are the same
+            const allSameClue = clues.every(clue => clue === clues[0]);
+            
+            if (allSameClue) {
+                const clue = clues[0];
+                deleteWords();
+                revealCompleted();
+                clearWords();
+            } else {
+                alert("Incorrect");
+            }
+        } else {
+            alert("Please select 4 words");
+        }
+    }
+
+    function getCard(word) {
+        return document.getElementById(`card-${word}`)
+    }
+    function clearWords() {
+        selectedWords.forEach((word) => {
+            const card = getCard(word);
+            if (card) {
+                card.classList.remove('selected');
+            }
+        });
+        selectedWords = [];
+        
+    }
+
+    function createGameCard(game) {
+        const isSelected = selectedWords.includes(game.title);
+        return `<div class="col-3 align-items-center justify-content-center mb-4">
+                    <div class="card ${isSelected ? 'selected' : ''}" id="card-${game.title}" onclick="toggleSelection(this, '${game.title}')">
+                        <div class="card-body d-flex align-items-center justify-content-center">
+                            <h5 class="card-title">${game.title}</h5>
+                        </div>
+                    </div>
+                </div>`;
+    }
+
+
+
+    function createGameRows(games) {
+        let rowHtml = '<div class="row">';
+        games.forEach(game => {
+            rowHtml += createGameCard(game);
+        });
+        rowHtml += '</div>';
+        return rowHtml;
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        
         const container = document.getElementById('game-container');
         const selectedWordsContainer = document.getElementById('selected-words');
 
-        // Array to store selected words
-        let selectedWords = [];
-
-        function createGameCard(game) {
-            const isSelected = selectedWords.includes(game.title) ? 'selected' : '';
-            return `<div class="col-3 align-items-center justify-content-center mb-4">
-                        <div class="card ${isSelected}" onclick="toggleSelection(this, '${game.title}')">
-                            <div class="card-body d-flex align-items-center justify-content-center">
-                                <h5 class="card-title">${game.title}</h5>
-                            </div>
-                        </div>
-                    </div>`;
-        }
-
-        function updateSelectedWordsDisplay() {
-            // Clear the selected words container
-            selectedWordsContainer.innerHTML = '';
-            // Display up to 4 selected words
-            for (let i = 0; i < Math.min(selectedWords.length, 4); i++) {
-                selectedWordsContainer.innerHTML += `<div>${selectedWords[i]}</div>`;
-            }
-        }
-
-        function createGameRows(games) {
-            let rowHtml = '<div class="row">';
-            games.forEach(game => {
-                rowHtml += createGameCard(game);
-            });
-            rowHtml += '</div>';
-            return rowHtml;
-        }
-
+        
         const rows = Math.ceil(games.length / 4);
         for (let i = 0; i < rows; i++) {
             const gamesForRow = games.slice(i * 4, i * 4 + 4);
@@ -197,8 +322,6 @@
         };
 
     });
-
-
     </script>
 
     <!-- Bootstrap Bundle with Popper -->
@@ -213,7 +336,7 @@
         // Initialize popovers
         var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
         var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-            return new bootstrap.Popover(popoverTriggerEl)
+            return new bootstrap.Popover(tooltipTriggerEl)
         })
     </script>
     
