@@ -115,91 +115,88 @@
 
     <!-- Responsive Grid Section -->
     <div class="container">
-        <div class="center-container mt-3">
-            <div class="center-square">
+            <div class="center-square justify-content-start mt-3">
                 <div class="row" id="game-container"></div>
             </div>
-        </div>
     </div>
 
     <script>
-document.addEventListener("DOMContentLoaded", function() {
-    const games = [
-        { title: 'Word 1', description: 'Description of game 1.' },
-        { title: 'Word 2', description: 'Description of game 2.' },
-        { title: 'Word 3', description: 'Description of game 3.' },
-        { title: 'Word 4', description: 'Description of game 4.' },
-        { title: 'Word 5', description: 'Description of game 5.' },
-        { title: 'Word 6', description: 'Description of game 6.' },
-        { title: 'Word 7', description: 'Description of game 7.' },
-        { title: 'Word 8', description: 'Description of game 8.' },
-        { title: 'Word 9', description: 'Description of game 9.' },
-        { title: 'Word 10', description: 'Description of game 10.' },
-        { title: 'Word 11', description: 'Description of game 11.' },
-        { title: 'Word 12', description: 'Description of game 12.' },
-        { title: 'Word 13', description: 'Description of game 13.' },
-        { title: 'Word 14', description: 'Description of game 14.' },
-        { title: 'Word 15', description: 'Description of game 15.' },
-        { title: 'Word 16', description: 'Description of game 16.' }
-        // Add more games as needed
-    ];
+    document.addEventListener("DOMContentLoaded", function() {
+        const games = [
+            { title: 'Word 1', description: 'Description of game 1.' },
+            { title: 'Word 2', description: 'Description of game 2.' },
+            { title: 'Word 3', description: 'Description of game 3.' },
+            { title: 'Word 4', description: 'Description of game 4.' },
+            { title: 'Word 5', description: 'Description of game 5.' },
+            { title: 'Word 6', description: 'Description of game 6.' },
+            { title: 'Word 7', description: 'Description of game 7.' },
+            { title: 'Word 8', description: 'Description of game 8.' },
+            { title: 'Word 9', description: 'Description of game 9.' },
+            { title: 'Word 10', description: 'Description of game 10.' },
+            { title: 'Word 11', description: 'Description of game 11.' },
+            { title: 'Word 12', description: 'Description of game 12.' },
+            { title: 'Word 13', description: 'Description of game 13.' },
+            { title: 'Word 14', description: 'Description of game 14.' },
+            { title: 'Word 15', description: 'Description of game 15.' },
+            { title: 'Word 16', description: 'Description of game 16.' }
+        ];
 
-    const container = document.getElementById('game-container');
-    const selectedWordsContainer = document.getElementById('selected-words');
+        const container = document.getElementById('game-container');
+        const selectedWordsContainer = document.getElementById('selected-words');
 
-    // Array to store selected words
-    let selectedWords = [];
+        // Array to store selected words
+        let selectedWords = [];
 
-    function createGameCard(game) {
-        const isSelected = selectedWords.includes(game.title) ? 'selected' : '';
-        return `<div class="col-3 align-items-center justify-content-center mb-4">
-                    <div class="card ${isSelected}" onclick="toggleSelection(this, '${game.title}')">
-                        <div class="card-body d-flex align-items-center justify-content-center">
-                            <h5 class="card-title">${game.title}</h5>
+        function createGameCard(game) {
+            const isSelected = selectedWords.includes(game.title) ? 'selected' : '';
+            return `<div class="col-3 align-items-center justify-content-center mb-4">
+                        <div class="card ${isSelected}" onclick="toggleSelection(this, '${game.title}')">
+                            <div class="card-body d-flex align-items-center justify-content-center">
+                                <h5 class="card-title">${game.title}</h5>
+                            </div>
                         </div>
-                    </div>
-                </div>`;
-    }
-
-    function updateSelectedWordsDisplay() {
-        // Clear the selected words container
-        selectedWordsContainer.innerHTML = '';
-        // Display up to 4 selected words
-        for (let i = 0; i < Math.min(selectedWords.length, 4); i++) {
-            selectedWordsContainer.innerHTML += `<div>${selectedWords[i]}</div>`;
+                    </div>`;
         }
-    }
 
-    function createGameRows(games) {
-        let rowHtml = '<div class="row">';
-        games.forEach(game => {
-            rowHtml += createGameCard(game);
-        });
-        rowHtml += '</div>';
-        return rowHtml;
-    }
-
-    const rows = Math.ceil(games.length / 4);
-    for (let i = 0; i < rows; i++) {
-        const gamesForRow = games.slice(i * 4, i * 4 + 4);
-        container.innerHTML += createGameRows(gamesForRow);
-    }
-
-    // Function to toggle selected state of the card
-    window.toggleSelection = function(card, word) {
-        const index = selectedWords.indexOf(word);
-        
-        if (index === -1 && selectedWords.length < 4) {
-            selectedWords.push(word);
-            card.classList.add('selected');
-        } else if (index !== -1) {
-            selectedWords.splice(index, 1);
-            card.classList.remove('selected');
+        function updateSelectedWordsDisplay() {
+            // Clear the selected words container
+            selectedWordsContainer.innerHTML = '';
+            // Display up to 4 selected words
+            for (let i = 0; i < Math.min(selectedWords.length, 4); i++) {
+                selectedWordsContainer.innerHTML += `<div>${selectedWords[i]}</div>`;
+            }
         }
-        updateSelectedWordsDisplay();
-    };
 
-});
+        function createGameRows(games) {
+            let rowHtml = '<div class="row">';
+            games.forEach(game => {
+                rowHtml += createGameCard(game);
+            });
+            rowHtml += '</div>';
+            return rowHtml;
+        }
+
+        const rows = Math.ceil(games.length / 4);
+        for (let i = 0; i < rows; i++) {
+            const gamesForRow = games.slice(i * 4, i * 4 + 4);
+            container.innerHTML += createGameRows(gamesForRow);
+        }
+
+        // Function to toggle selected state of the card
+        window.toggleSelection = function(card, word) {
+            const index = selectedWords.indexOf(word);
+            
+            if (index === -1 && selectedWords.length < 4) {
+                selectedWords.push(word);
+                card.classList.add('selected');
+            } else if (index !== -1) {
+                selectedWords.splice(index, 1);
+                card.classList.remove('selected');
+            }
+            updateSelectedWordsDisplay();
+        };
+
+    });
 
 
     </script>

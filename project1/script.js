@@ -57,14 +57,14 @@ function createCards() {
     const cardContainer = document.getElementById('card-container'); // holds all the cards
     cardData.forEach(card => {
         const cardCol = document.createElement('div');
-        cardCol.className = 'col-md-4';
+        cardCol.className = 'col-md-4 p-3';
         cardCol.innerHTML = `
-            <div class="card mb-4 shadow-sm">
-                <img src="${card.image_url}" class="card-img-top h-100" alt="Card image">
-                <div class="card-body">
+            <div class="card shadow-sm h-100 spacer-5">
+                <img src="${card.image_url}" class="card-img-top" alt="Card image">
+                <div class="card-body d-flex flex-column justify-content-between">
                     <h5 class="card-title">${card.title}</h5>
                     <p class="card-text">${card.text}</p>
-                    <button type="button" class="btn btn-tertiary border-warning border-5 rounded-0 sm-w-100 btn-md-only btn-light" data-toggle="modal" data-target="#cardModal${card.id}">
+                    <button type="button" class="btn btn-tertiary border-warning border-5 rounded-0 btn-md-only btn-light w-100" data-toggle="modal" data-target="#cardModal${card.id}">
                         Add to Cart
                     </button>
                 </div>
@@ -125,13 +125,20 @@ function createCards() {
 $(document).on('click', '.addToCartBtn', function() {
     const cardId = $(this).data('card-id');
     const quantity = $(`#quantity${cardId}`).val();
-    const unitPrice = 10; // Assuming unit price is $10
-    if (quantity && quantity > 0 && !isNaN(quantity)) {
-        const totalPrice = quantity * unitPrice;
-        $(`#summary${cardId}`).html(`<p>Great! Order of ${quantity} items is received, total price is $${totalPrice.toFixed(2)}.</p>`);
-        $(this).hide(); // Hide the button after it is clicked
-    } else {
-        $(`#summary${cardId}`).html('<p class="text-danger">Please enter a valid quantity.</p>');
+    
+    // Find the item in cardData by cardId
+    const item = cardData.find(card => card.id === cardId);
+    if (item) {
+        // Extract and parse the price
+        const unitPrice = parseFloat(item.price.replace('$', ''));
+        
+        if (quantity && quantity > 0 && !isNaN(quantity)) {
+            const totalPrice = quantity * unitPrice;
+            $(`#summary${cardId}`).html(`<p>Great! Order of ${quantity} items is received, total price is $${totalPrice.toFixed(2)}.</p>`);
+            $(this).hide(); // Hide the button after it is clicked
+        } else {
+            $(`#summary${cardId}`).html('<p class="text-danger">Please enter a valid quantity.</p>');
+        }
     }
 });
 
