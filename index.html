@@ -1,0 +1,256 @@
+<html lang="en" data-bs-smooth-scroll="">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Justin Silbiger - Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&amp;display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-5XGEF9DEEX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-5XGEF9DEEX');
+    </script>
+</head>
+<!-- Google tag (gtag.js) -->
+
+
+<body class="dark-mode" data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0">
+    <div id="sidebar" class="sidebar">
+        <button id="closeSidebar" class="btn-close small-btn" aria-label="Close"></button>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#projects">Projects</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#certifications">Certifications</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#contact">Contact</a>
+            </li>
+            <li class="nav-item">
+                <div class="form-check form-switch align-middle">
+                    <input class="form-check-input" type="checkbox" id="themeToggle">
+                    <label class="form-check-label" for="themeToggle">Dark Mode</label>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Justin Silbiger</a>
+            <button id="openSidebar" class="btn btn-outline-secondary" type="button">Menu</button>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <header class="header rounded-section">
+            <div class="container">
+                <h1 class="display-4">Hello, I'm Justin Silbiger.</h1>
+                <img src="./assets/Headshot.jpeg" class="img-thumbnail rounded-circle m-4"
+                    style="width: 150px; height: 150px;">
+                <p class="lead">A software engineer, passionate about merging public health and technology.</p>
+                <a href="https://github.com/JustinSilbiger" class="btn btn-primary mx-1" target="_blank"
+                    style="width: 150px; height: 50px; display: inline-block; text-align: center; line-height: 35px; background-color: rgb(255, 255, 255); border-color: rgb(255, 255, 255); color: rgb(0, 0, 0);">GitHub</a>
+                <a href="https://www.linkedin.com/in/justinzs/" class="btn btn-primary mx-1" target="_blank"
+                    style="width: 150px; height: 50px; display: inline-block; text-align: center; line-height: 35px; background-color: rgb(255, 255, 255); border-color: rgb(255, 255, 255); color: rgb(0, 0, 0);">LinkedIn</a>
+
+
+            </div>
+        </header>
+
+        <section id="projects" class="projects">
+            <div class="container">
+                <h2 class="display-6">Projects</h2>
+                <div id="projects-container" class="row">
+                    <!-- Projects will be populated here by JavaScript -->
+                    <div class="col-md-4 d-flex p-2">
+                        <div class="card project-card aos-init aos-animate" data-aos="fade-up">
+                            <div class="card-body">
+                                <h5 class="card-title">To-Do Django</h5>
+                                <p class="card-text">A simple to-do application built with Django.</p>
+                                <a href="https://github.com/JustinSilbiger/To_Do_Django" class="btn btn-primary"
+                                    target="_blank"
+                                    style="background-color: rgb(255, 255, 255); border-color: rgb(255, 255, 255); color: rgb(0, 0, 0);">Learn
+                                    More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 d-flex p-2">
+                        <div class="card project-card aos-init aos-animate" data-aos="fade-up">
+                            <div class="card-body">
+                                <h5 class="card-title">JTimes.org</h5>
+                                <p class="card-text">This reference website utilizes the Hebcal API to fetch and display
+                                    Sabbath times, leveraging JavaScript Geolocation for user-specific information.
+                                    String concatenation is employed to dynamically construct and present location-based
+                                    information, combining static text with fetched data for personalized content.</p>
+                                <a href="https://github.com/JustinSilbiger/shabbat-shalom.github.io"
+                                    class="btn btn-primary" target="_blank"
+                                    style="background-color: rgb(255, 255, 255); border-color: rgb(255, 255, 255); color: rgb(0, 0, 0);">Learn
+                                    More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 d-flex p-2">
+                        <div class="card project-card aos-init aos-animate" data-aos="fade-up">
+                            <div class="card-body">
+                                <h5 class="card-title">Silbiger Family Tree</h5>
+                                <p class="card-text">The Silbiger Family Tree is a Node.js web application designed to
+                                    document the genealogy of the Silbiger family. It uses PostgreSQL for the database
+                                    and Node.js for both the frontend and backend. The application is styled with
+                                    Bootstrap, providing a clean and responsive design. It supports full CRUD
+                                    operations, allowing users to create, read, update, and delete family records
+                                    efficiently. JWT (JSON Web Tokens) is used for secure authentication and
+                                    authorization, with administrator login granting permissions for operation
+                                    management.</p>
+                                <a href="https://github.com/JustinSilbiger/silbiger" class="btn btn-primary"
+                                    target="_blank"
+                                    style="background-color: rgb(255, 255, 255); border-color: rgb(255, 255, 255); color: rgb(0, 0, 0);">Learn
+                                    More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 d-flex p-2">
+                        <div class="card project-card aos-init" data-aos="fade-up">
+                            <div class="card-body">
+                                <h5 class="card-title">Sigma Mary AI</h5>
+                                <p class="card-text">Sigma-Mary-AI is an AI text summarizer built using Meta's BART
+                                    model, trained on CNN and Daily Mail news articles. Developed as a project from
+                                    Postman Academy, it effectively condenses lengthy texts into concise summaries. By
+                                    leveraging advanced natural language processing, Sigma-Mary-AI demonstrates the
+                                    practical use of AI in text summarization.</p>
+                                <a href="https://github.com/JustinSilbiger/Sigma-Mary-AI" class="btn btn-primary"
+                                    target="_blank"
+                                    style="background-color: rgb(255, 255, 255); border-color: rgb(255, 255, 255); color: rgb(0, 0, 0);">Learn
+                                    More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 d-flex p-2">
+                        <div class="card project-card aos-init" data-aos="fade-up">
+                            <div class="card-body">
+                                <h5 class="card-title">Patient Service UI</h5>
+                                <p class="card-text">A React front-end UI for the Patient Service API.</p>
+                                <a href="https://github.com/JustinSilbiger/PATIENT_SERVICE_UI" class="btn btn-primary"
+                                    target="_blank"
+                                    style="background-color: rgb(255, 255, 255); border-color: rgb(255, 255, 255); color: rgb(0, 0, 0);">Learn
+                                    More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 d-flex p-2">
+                        <div class="card project-card aos-init" data-aos="fade-up">
+                            <div class="card-body">
+                                <h5 class="card-title">Patient Service API</h5>
+                                <p class="card-text">The Patient Service API is a robust Python-based RESTful API
+                                    designed to manage patient details within a hospital management system. Built with
+                                    FastAPI, it offers endpoints for creating, reading, updating, and deleting patient
+                                    records, ensuring secure and efficient data handling. As part of a boot camp project
+                                    I contributed to, this API showcases the use of modern frameworks to provide
+                                    reliable and scalable healthcare data management solutions.</p>
+                                <a href="https://github.com/JustinSilbiger/Patient-Service-API" class="btn btn-primary"
+                                    target="_blank"
+                                    style="background-color: rgb(255, 255, 255); border-color: rgb(255, 255, 255); color: rgb(0, 0, 0);">Learn
+                                    More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 d-flex p-2">
+                        <div class="card project-card aos-init" data-aos="fade-up">
+                            <div class="card-body">
+                                <h5 class="card-title">Tasky</h5>
+                                <p class="card-text">Tasky is a full-stack web application I developed to streamline
+                                    task management. It features a React.js frontend hosted on AWS S3 and a Django
+                                    backend deployed on AWS EC2, utilizing SQLite for data storage. The application
+                                    employs RESTful APIs for seamless frontend-backend communication and supports full
+                                    CRUD operations for managing tasks.</p>
+                                <a href="http://taskyfe.s3-website-us-east-1.amazonaws.com/login"
+                                    class="btn btn-primary" target="_blank"
+                                    style="background-color: rgb(255, 255, 255); border-color: rgb(255, 255, 255); color: rgb(0, 0, 0);">Learn
+                                    More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 d-flex p-2">
+                        <div class="card project-card aos-init" data-aos="fade-up">
+                            <div class="card-body">
+                                <h5 class="card-title">Recipe Book</h5>
+                                <p class="card-text">A Flask application to manage and share your favorite recipes.</p>
+                                <a href="https://github.com/JustinSilbiger/recipe_book" class="btn btn-primary"
+                                    target="_blank"
+                                    style="background-color: rgb(255, 255, 255); border-color: rgb(255, 255, 255); color: rgb(0, 0, 0);">Learn
+                                    More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container" id="certifications">
+                <h2 class="display-6 mt-5 mb-3">Certifications</h2>
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <embed src="./assets/Fullstack.jpg" class="d-block w-100"
+                            style="height: auto; border: 1px solid #ddd; border-radius: 8px;">
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <embed src="./assets/Web.jpg" class="d-block w-100"
+                            style="height: auto; border: 1px solid #ddd; border-radius: 8px;">
+                    </div>
+                </div>
+            </div>
+
+
+        </section>
+
+        <section id="contact" class="contact bg-light rounded-section">
+            <div class="container">
+                <h2 class="display-6">Contact</h2>
+                <form action="https://formspree.io/f/xdoqynqr" method="POST">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name:</label>
+                        <input type="text" class="form-control" name="name" id="name" required="">
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email:</label>
+                        <input type="email" class="form-control" name="email" id="email" required="">
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Message:</label>
+                        <textarea class="form-control" name="message" id="message" rows="3" required=""></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary"
+                        style="background-color: rgb(255, 255, 255); border-color: rgb(255, 255, 255); color: rgb(0, 0, 0);">Send</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2024 Justin Silbiger. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <button id="scrollTopBtn" class="btn btn-secondary"
+        style="background-color: rgb(255, 255, 255); border-color: rgb(255, 255, 255); color: rgb(0, 0, 0); display: block;">Top</button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="scripts.js"></script>
+
+
+</body>
+
+</html>
